@@ -3,10 +3,12 @@
     "description": "Calculated entity properties for Symfony",
     "keywords": ["doctrine", "symfony"],
     "type": "symfony-bundle",
+    "homepage": "https://github.com/ccapndave/DKCalculatorBundle",
     "license": "MIT",
     "authors": [
         {
-            "name": "Dave Keen"
+            "name": "Dave Keen",
+            "homepage": "http://www.actionscriptdeveloper.co.uk"
         }
     ],
     "require": {
