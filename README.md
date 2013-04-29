@@ -5,7 +5,7 @@ This is a simple bundle that allows you to use dynamically calculated properties
 Installation
 ============
 
-To install JMSSecurityExtraBundle with Composer just add the following to your composer.json file:
+To install CalculatorBundle with Composer just add the following to your composer.json file:
 
 ```
 // composer.json
@@ -30,7 +30,7 @@ Now, Composer will automatically download all required files, and install them f
 // in AppKernel::registerBundles()
 $bundles = array(
     // ...
-    new DK\CalculatorBundle\CalculatorBundle(),
+    new DK\CalculatorBundle\DKCalculatorBundle(),
     // ...
 );
 
