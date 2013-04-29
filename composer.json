@@ -1,7 +1,7 @@
 {
     "name": "dk/calculator-bundle",
     "description": "Calculated entity properties for Symfony",
-    "keywords": ["doctrine", "symfony"],
+    "keywords": ["doctrine", "symfony", "entity"],
     "type": "symfony-bundle",
     "homepage": "https://github.com/ccapndave/DKCalculatorBundle",
     "license": "MIT",
