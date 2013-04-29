@@ -97,6 +97,10 @@ class Transaction {
 }
 ```
 
+A class (any class will do) is specified in the `class` property of the `@Calculator` annotation, and when the entity
+has loaded a method name `get<property>` will be called on this class.  The methods are passed the entity and the
+Doctrine EntityManager.
+
 Future
 ======
 
