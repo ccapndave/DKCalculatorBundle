@@ -7,7 +7,7 @@ Installation
 
 To install JMSSecurityExtraBundle with Composer just add the following to your composer.json file:
 
-```json
+```
 // composer.json
 {
     // ...
@@ -18,7 +18,7 @@ To install JMSSecurityExtraBundle with Composer just add the following to your c
 }
 ```
 
-Then, you can install the new dependencies by running Composer’s update command from the directory where your composer.json file is located:
+Then, you can install the new dependencies by running Composerï¿½s update command from the directory where your composer.json file is located:
 ```
 php composer.phar update dk/calculator-bundle
 ```
@@ -96,3 +96,12 @@ class Transaction {
     
 }
 ```
+
+Future
+======
+
+This was knocked together very quickly and it can be extended and improved in many ways.
+
+- **Caching**: by specifying a calculated fields dependencies in the annotation we can store a value in the database and
+only perform new calculations when the dependencies change
+- **Unit tests**
