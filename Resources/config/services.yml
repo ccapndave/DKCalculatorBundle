@@ -1,0 +1,18 @@
+services:
+    dk_calculator.metadata.annotation_driver:
+        public: false
+        class: DK\CalculatorBundle\Metadata\Driver\AnnotationDriver
+        arguments: [ @annotation_reader ]
+
+    dk_calculator.metadata_factory:
+        public: false
+        class: Metadata\MetadataFactory
+        arguments: [ @dk_calculator.metadata.annotation_driver ]
+
+    dk_calculator.entity_listener:
+        class: DK\CalculatorBundle\EventListener\EntityListener
+        arguments: [ @dk_calculator.metadata_factory ]
+        tags:
+            - { name: doctrine.event_listener, event: postLoad }
+            #- { name: doctrine.event_listener, event: postPersist }
+            #- { name: doctrine.event_listener, event: postUpdate }
