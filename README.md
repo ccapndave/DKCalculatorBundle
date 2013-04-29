@@ -5,7 +5,34 @@ This is a simple bundle that allows you to use dynamically calculated properties
 Installation
 ============
 
-TODO
+To install JMSSecurityExtraBundle with Composer just add the following to your composer.json file:
+
+```json
+// composer.json
+{
+    // ...
+    require: {
+        // ...
+        "dk/calculator-bundle": "dev-master"
+    }
+}
+```
+
+Then, you can install the new dependencies by running Composer’s update command from the directory where your composer.json file is located:
+```
+php composer.phar update dk/calculator-bundle
+```
+
+Now, Composer will automatically download all required files, and install them for you. All that is left to do is to update your AppKernel.php file, and register the new bundle:
+
+<?php
+
+// in AppKernel::registerBundles()
+$bundles = array(
+    // ...
+    new DK\CalculatorBundle\CalculatorBundle(),
+    // ...
+);
 
 Usage
 =====
