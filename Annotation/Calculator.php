@@ -14,11 +14,15 @@ final class Calculator {
     /** @var string */
     public $class;
 
-    public function __construct($options) {
-        if (!isset($options['class']))
-            throw new \InvalidArgumentException("Calculator annotation requires 'class'");
+    /** @var string */
+    public $service;
 
-        $this->class = $options['class'];
+    public function __construct($options) {
+        if (!isset($options['class']) && !isset($options['service']))
+            throw new \InvalidArgumentException("Calculator annotation requires 'class' or 'service'");
+
+        if (isset($options['class'])) $this->class = $options['class'];
+        if (isset($options['service'])) $this->service = $options['service'];
     }
 
 }

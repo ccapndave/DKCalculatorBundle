@@ -11,7 +11,7 @@ services:
 
     dk_calculator.entity_listener:
         class: DK\CalculatorBundle\EventListener\EntityListener
-        arguments: [ @dk_calculator.metadata_factory ]
+        arguments: [ @dk_calculator.metadata_factory, @service_container ]
         tags:
             - { name: doctrine.event_listener, event: postLoad }
             #- { name: doctrine.event_listener, event: postPersist }
