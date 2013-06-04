@@ -64,6 +64,8 @@ class User {
     /**
      * @Calculator(service="my.calculator.service")
      */
+    protected $serviceBalance;
+    public function getBalance() { return $this->serviceBalance; }
 
 }
 
