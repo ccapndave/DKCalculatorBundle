@@ -65,7 +65,7 @@ class User {
      * @Calculator(service="my.calculator.service")
      */
     protected $serviceBalance;
-    public function getBalance() { return $this->serviceBalance; }
+    public function getServiceBalance() { return $this->serviceBalance; }
 
 }
 
@@ -105,8 +105,9 @@ class Transaction {
 ```
 
 A class (any class will do) is specified in the `class` property of the `@Calculator` annotation, and when the entity
-has loaded a method name `get<property>` will be called on this class.  The methods are passed the entity and the
-Doctrine EntityManager.
+has loaded a method name `get<property>`, `is<property>` or `has<property>` will be called on this class.  The methods
+are passed the entity as a parameters, and when using `class` instead of `service` the EntityManager is passed as the
+second parameter.
 
 Future
 ======
