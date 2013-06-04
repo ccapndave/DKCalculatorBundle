@@ -59,8 +59,11 @@ class User {
      * @Calculator(class="UserCalculator")
      */
     protected $balance;
-    public function setBalance($value) { $this->balance = $value; return $this; }
     public function getBalance() { return $this->balance; }
+
+    /**
+     * @Calculator(service="my.calculator.service")
+     */
 
 }
 
