@@ -30,27 +30,21 @@ class SchemaSetupListener extends EventManager {
 
 class CalculatorTest extends OrmTestCase {
 
+    protected $kernel;
+
+    protected function get($id) {
+        return $this->kernel->getContainer()->get($id);
+    }
+
+    public function __construct() {
+        require_once(__DIR__."/Functional/app/AppKernel.php");
+        $this->kernel = new \AppKernel("test", true);
+        $this->kernel->boot();
+    }
+
     protected function createEntityManager() {
-        /*$dbParams = array(
-            'driver'   => 'pdo_sqlite',
-            'dbname'   => 'test.db'
-        );*/
-
-        $dbParams = array(
-            'driver' => 'pdo_mysql',
-            'dbname' => 'dkcalculator_test',
-            'user' => 'root'
-        );
-
-        $paths = array(dirname(__FILE__)."/Entity");
-
-        $eventManager = new EventManager();
-        $eventManager->addEventListener(array("preTestSetUp"), new SchemaSetupListener());
-
-        $config = Setup::createAnnotationMetadataConfiguration($paths, true);
-        $config->setMetadataDriverImpl(new AnnotationDriver(new IndexedReader(new AnnotationReader()), $paths));
-
-        $em = EntityManager::create($dbParams, $config, $eventManager);
+        $em = $this->get("doctrine.orm.entity_manager");
+        $em->getEventManager()->addEventListener(array("preTestSetUp"), new SchemaSetupListener());
         return $em;
     }
 
@@ -59,9 +53,9 @@ class CalculatorTest extends OrmTestCase {
     }
 
     public function testHelloWorld() {
-        $person = new Person();
+        /*$person = new Person();
         $this->getEntityManager()->persist($person);
-        $this->getEntityManager()->flush();
+        $this->getEntityManager()->flush();*/
     }
 
 }

@@ -6,7 +6,9 @@
          verbose="true"
          bootstrap="./Tests/bootstrap.php">
 
-    <php />
+    <php>
+        <server name="KERNEL_DIR" value="./Tests/Functional/app" />
+    </php>
 
     <testsuites>
         <testsuite name="CalculatorBundle Test Suite">

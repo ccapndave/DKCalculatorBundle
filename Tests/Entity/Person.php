@@ -25,4 +25,12 @@ class Person {
     public function addEntry($value) { $value->setPerson($this); $this->entries[] = $value; return $this; }
     public function getEntries() { return $this->entries; }
 
+    /**
+     * DK\Calculator(service="person.calculator", observers="{entries}")
+     */
+    protected $totalEntries;
+    public function getEntryTotal() {
+        return $this->entryTotal;
+    }
+
 }

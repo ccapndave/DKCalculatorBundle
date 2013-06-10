@@ -1,0 +1,19 @@
+framework:
+    secret: 3f427cc087fa9d68bbad5a5501a1e953
+
+doctrine:
+    dbal:
+        driver:   pdo_mysql
+        dbname:   dkcalculator_test
+        user:     root
+        password:
+        charset:  UTF8
+
+    orm:
+        auto_generate_proxy_classes: true
+        auto_mapping: true
+        mappings:
+            DKCalculatorBundle:
+                type: annotation
+                prefix: DK\CalculatorBundle\Tests\Entity
+                dir: Tests\Entity
