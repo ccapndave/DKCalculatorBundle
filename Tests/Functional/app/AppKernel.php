@@ -13,7 +13,7 @@ class AppKernel extends Kernel {
 
         if (in_array($this->getEnvironment(), array('test'))) {
             $bundles[] = new Symfony\Bundle\FrameworkBundle\FrameworkBundle();
-            $bundles[] =  new Doctrine\Bundle\DoctrineBundle\DoctrineBundle();
+            $bundles[] = new Doctrine\Bundle\DoctrineBundle\DoctrineBundle();
             $bundles[] = new DK\CalculatorBundle\DKCalculatorBundle();
             /*new Symfony\Bundle\TwigBundle\TwigBundle(),
             new Symfony\Bundle\MonologBundle\MonologBundle(),

@@ -8,3 +8,6 @@ if (!file_exists($file = __DIR__.'/../vendor/autoload.php')) {
 $loader = require $file;
 
 AnnotationRegistry::registerLoader(array($loader, 'loadClass'));
+
+# Manually register our annotations
+AnnotationRegistry::registerFile(__DIR__.'/../Annotation/Calculator.php');

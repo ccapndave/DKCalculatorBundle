@@ -26,7 +26,7 @@ class Person {
     public function getEntries() { return $this->entries; }
 
     /**
-     * DK\Calculator(service="person.calculator", observers="{entries}")
+     * @DK\Calculator(service="person.calculator", observers="{entries}")
      */
     protected $totalEntries;
     public function getEntryTotal() {

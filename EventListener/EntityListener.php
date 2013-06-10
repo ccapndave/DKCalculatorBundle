@@ -9,9 +9,12 @@ use Symfony\Component\HttpKernel\HttpKernelInterface;
 
 class EntityListener {
 
+    protected $metadataFactory;
+
     protected $container;
 
-    public function __construct(ContainerInterface $container) {
+    public function __construct(MetadataFactoryInterface $metadataFactory, ContainerInterface $container) {
+        $this->metadataFactory = $metadataFactory;
         $this->container = $container;
     }
 
