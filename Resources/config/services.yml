@@ -13,6 +13,7 @@ services:
         class: DK\CalculatorBundle\EventListener\EntityListener
         arguments: [ @dk_calculator.metadata_factory, @service_container ]
         tags:
-            - { name: doctrine.event_listener, event: postLoad }
+            #- { name: doctrine.event_listener, event: postLoad }
             #- { name: doctrine.event_listener, event: postPersist }
             #- { name: doctrine.event_listener, event: postUpdate }
+            - { name: doctrine.event_listener, event: postFlush }

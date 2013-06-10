@@ -2,6 +2,7 @@
 namespace DK\CalculatorBundle\EventListener;
 
 use Doctrine\ORM\Event\LifecycleEventArgs;
+use Doctrine\ORM\Event\PostFlushEventArgs;
 use Metadata\MetadataFactoryInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\HttpKernel\HttpKernelInterface;
@@ -42,6 +43,17 @@ class EntityListener {
                 $propertyMetadata->setValue($entity, $result);
             }
         }
+    }
+
+    public function postFlush(PostFlushEventArgs $args) {
+        /*$entity = $args->getEntity();
+
+        $classMetadata = $this->metadataFactory->getMetadataForClass(get_class($entity));
+        foreach ($classMetadata->propertyMetadata as $propertyMetadata) {
+            if (isset($propertyMetadata->calculator)) {
+
+            }
+        }*/
     }
 
 }
