@@ -17,3 +17,8 @@ doctrine:
                 type: annotation
                 prefix: DK\CalculatorBundle\Tests\Entity
                 dir: Tests\Entity
+
+services:
+    person.calculator:
+        class: DK\CalculatorBundle\Tests\Service\PersonCalculatorService
+        arguments: [ @doctrine.orm.entity_manager ]

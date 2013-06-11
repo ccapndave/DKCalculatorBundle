@@ -1,6 +1,7 @@
 <?php
 namespace DK\CalculatorBundle\Tests;
 
+use DK\CalculatorBundle\Tests\Entity\Entry;
 use DK\CalculatorBundle\Tests\Entity\Person;
 use Doctrine\Common\Annotations\AnnotationReader;
 use Doctrine\Common\Annotations\IndexedReader;
@@ -53,9 +54,18 @@ class CalculatorTest extends OrmTestCase {
     }
 
     public function testHelloWorld() {
-        /*$person = new Person();
+        $person = new Person();
         $this->getEntityManager()->persist($person);
-        $this->getEntityManager()->flush();*/
+        $this->getEntityManager()->flush();
+
+        $this->assertEquals(0, $person->getEntryTotal());
+
+        $entry = new Entry();
+        $entry->setValue(10);
+        $this->getEntityManager()->persist($entry);
+
+        $person->addEntry($entry);
+        $this->getEntityManager()->flush();
     }
 
 }

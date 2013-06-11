@@ -2,6 +2,7 @@
 namespace DK\CalculatorBundle\EventListener;
 
 use Doctrine\ORM\Event\LifecycleEventArgs;
+use Doctrine\ORM\Event\OnFlushEventArgs;
 use Doctrine\ORM\Event\PostFlushEventArgs;
 use Metadata\MetadataFactoryInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
@@ -44,6 +45,12 @@ class EntityListener {
             }
         }
     }*/
+
+    public function onFlush(OnFlushEventArgs $args) {
+        $uow = $args->getEntityManager()->getUnitOfWork();
+
+
+    }
 
     public function postFlush(PostFlushEventArgs $args) {
         echo "post flush";

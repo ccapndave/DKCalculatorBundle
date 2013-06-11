@@ -28,7 +28,7 @@ class Person {
     /**
      * @DK\Calculator(service="person.calculator", observers="{entries}")
      */
-    protected $totalEntries;
+    protected $entryTotal;
     public function getEntryTotal() {
         return $this->entryTotal;
     }
