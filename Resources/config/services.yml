@@ -1,4 +1,9 @@
 services:
+    dk_calculator.calculator:
+        public: true
+        class: DK\CalculatorBundle\Service\CalculatorService
+        arguments: [ @dk_calculator.metadata_factory, @service_container ]
+
     dk_calculator.metadata.annotation_driver:
         public: true
         class: DK\CalculatorBundle\Metadata\Driver\AnnotationDriver
@@ -11,7 +16,7 @@ services:
 
     dk_calculator.entity_listener:
         class: DK\CalculatorBundle\EventListener\EntityListener
-        arguments: [ @dk_calculator.metadata_factory, @service_container ]
+        arguments: [ @dk_calculator.calculator ]
         tags:
             #- { name: doctrine.event_listener, event: postLoad }
             #- { name: doctrine.event_listener, event: postPersist }
