@@ -33,7 +33,8 @@ class RefreshCommand extends ContainerAwareCommand {
                 $output->writeln(" done");
             } catch (\Exception $e) {
                 // Sometimes there are DQL errors which we want to log, but ignore
-                $output->writeln($e->getMessage()."\n\n");
+                $output->writeln($e->getMessage());
+                $output->writeln($e->getTraceAsString()."\n\n");
             }
         }
     }

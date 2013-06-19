@@ -40,10 +40,11 @@ class CalculatorService {
                 $propertyMetadata->setValue($entity, $result);
 
                 // Update the field in the database with some update DQL
+                // TODO: this needs to be implemented for all different types (e.g. for boolean it doesn't react well!)
                 $qb = $em->createQueryBuilder()
                     ->update(get_class($entity), 'e')
                     ->set("e.".$propertyMetadata->name, $result)
-                    ->where('e = :entity')->setParameter('entity', $entity->getId());
+                    ->where('e = :entity')->setParameter('entity', $entity);
 
                 $qb->getQuery()->getResult();
             }
